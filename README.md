@@ -1,19 +1,20 @@
 # dectgan
 
 # Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
+Please install our liblary by this code. 
  
 ```bash
-pip install huga_package
+pip install  git+https://github.com/TouiNishikawa/dectgan.git
 ```
  
 # Usage
  
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
+
 ```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+import dectgan
+dectgan.train('./baron_train_1_2.csv', 50, 251, 50, "ductal", 1000)
+```
+
+```bash
+dectgan.train2train_aug('./baron_train_1_2.csv','./baron_pDataC_1_2.csv', 1000, 250)
 ```
