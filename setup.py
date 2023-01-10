@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
 
-install_requires= [
+install_requires = [
     "ctgan"
 ]
+
 
 setup(
     name='dectgan',

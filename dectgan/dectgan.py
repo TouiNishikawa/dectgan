@@ -5,7 +5,6 @@ import time
 def train(df_path, epoch_start, epoch_end, epoch_term, ct, data_num):
     df = pd.read_csv(df_path, header=None)
     ctgan = CTGAN()
-
     df.iloc[0, 0] = "cellType"
     df = df.T
     df.columns = df.iloc[0]

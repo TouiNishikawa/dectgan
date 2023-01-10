@@ -41,7 +41,7 @@ def selectFile(filtertext, multiselect):
         return result[0]
     except:
         return ""
-        
+
 @eel.expose
 def selectSaveFile(filtertext):
     try:
@@ -92,7 +92,7 @@ def assessGAN():
         for i in range(lastrun[1], lastrun[2] + 1, lastrun[3]):
             mtr = pd.concat([mtr, pd.read_csv("./synthetic_data1000_epoch" +  str(i) + ".csv", header=0)])
             count.append(len(mtr))
-        
+
         reducer = umap.UMAP(n_components=2, random_state=0, n_neighbors=10)
         x_embedded = reducer.fit_transform(mtr)
         return [lastrun, count, x_embedded.tolist()]
