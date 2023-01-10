@@ -13,6 +13,7 @@ def train(df_path, epoch_start, epoch_end, epoch_term, ct, data_num):
     df_celtype = df[df["cellType"]==ct]
 
     for i in range(epoch_start, epoch_end, epoch_term):
+        print(int(i) + "/" +str(epoch_end))
         discrete_columns = [
             "cellType"
         ]
@@ -55,7 +56,7 @@ def train2train_aug(train_data_path, pheno_data_path, num_data, epoch):
 
     # 出力
     df_concat_multi_T.to_csv('baron_train1_2_aug_data' + str(num_data) + '_epoch' +  str(epoch) + '.csv', header=True, index=True)
-
+    print('"baron_train1_2_aug_data' + str(num_data) + '_epoch' +  str(epoch) + '.csv"'+ 'was exported.')
 
     # データ生成分のpheno data
     df_p = pd.read_csv(pheno_data_path)
@@ -74,3 +75,4 @@ def train2train_aug(train_data_path, pheno_data_path, num_data, epoch):
     df_p_concat = df_p_concat.reindex(columns=['', 'cellID', 'cellType',	'sampleID'])
 
     df_p_concat.to_csv('./baron_pDataC_1_2_aug_data' + str(num_data) + '_epoch' +  str(epoch) + '.csv', header=True, index=False)
+    print('"baron_pDataC_1_2_aug_data' + str(num_data) + '_epoch' +  str(epoch) + '.csv"'+ 'was exported.')
