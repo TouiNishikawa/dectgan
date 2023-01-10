@@ -1,4 +1,5 @@
 # dectgan
+![画像2](https://user-images.githubusercontent.com/40726615/211593936-1fa5e05b-d6b3-49d2-93b1-dc28912231ac.png)
 
 # Installation
 Please install our liblary by this code. 
