@@ -18,7 +18,7 @@ def train(df_path, epoch_start, epoch_end, epoch_term, ct, data_num):
         ]
         if i!= 50:
             ctgan = CTGAN().load('./model_ctgan_epoch' + str(i-50) +'.pkl')
-        ctgan.fit(df_celtypel, discrete_columns, epochs=epoch_term)
+        ctgan.fit(df_celtype, discrete_columns, epochs=epoch_term)
         ctgan.save('./model_ctgan_epoch' + str(i) +'.pkl')
 
         synthetic_data = ctgan.sample(data_num)
